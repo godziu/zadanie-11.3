@@ -24,7 +24,10 @@ function Column(name) {
 
   this.id = randomString();
   this.name = name;
-  this.element = generateTemplate('column-template', { name: this.name });
+  this.element = generateTemplate('column-template', { 
+  	name: this.name,
+  	id: this.id
+  	 });
 
   this.element.querySelector('.column').addEventListener('click', function (event) {
   	if (event.target.classList.contains('btn-delete')) {
@@ -51,7 +54,7 @@ function Card(description) {
 
   this.id = randomString();
   this.description = description;
-  this.element = generateTemplate('card-template', { description: this.description }, 'li');
+  this.element = generateTemplate('card-template', { description: this.description, id: this.id }, 'li');
 
   this.element.querySelector('.card').addEventListener('click', function (event) {
   	event.stopPropagation();
